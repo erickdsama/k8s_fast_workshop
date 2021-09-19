@@ -3,13 +3,13 @@
 ## Indice
 
 
-[DIA 1](#dia1) Introudcción y practica en local
+[DIA 1](dia1) Introudcción y practica en local
 
-[DIA 2](#dia1) DigitalOcean, primer proyecto(Explicación, deploy)
+[DIA 2](dia1) DigitalOcean, primer proyecto(Explicación, deploy)
 
-[DIA 3](#dia1) Primer Proyecto(Volumenes, Nginx Ingress, cert-manager)
+[DIA 3](dia1) Primer Proyecto(Volumenes, Nginx Ingress, cert-manager)
 
-[DIA 4](#dia1) primer proyecto (HPA, Locust)
+[DIA 4](dia1) primer proyecto (HPA, Locust)
 
 ## RECURSOS
 
