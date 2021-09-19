@@ -1,6 +1,17 @@
 # k8s_fast_workshop
 
-### RECURSOS
+## Indice
+
+
+[DIA 1](#dia1) Introudcción y practica en local
+
+[DIA 2](#dia1) DigitalOcean, primer proyecto(Explicación, deploy)
+
+[DIA 3](#dia1) Primer Proyecto(Volumenes, Nginx Ingress, cert-manager)
+
+[DIA 4](#dia1) primer proyecto (HPA, Locust)
+
+## RECURSOS
 
 instalar docker:
 
@@ -13,7 +24,7 @@ https://docs.docker.com/desktop/mac/install/
 WINDOWS
 https://docs.docker.com/desktop/windows/install/
 
-
+## ACTIVAR Kubernetes en docker-desktop
 ![](resources/settings-kubernetes.png)
 
 
