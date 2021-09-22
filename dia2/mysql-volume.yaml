@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysqldb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: mysqldb
+  template:
+    metadata:
+      labels:
+        name: mysqldb
+    spec:
+      volumes:
+        - name: mysql-volume
+          persistentVolumeClaim:
+            claimName: pvc-mysql
+      containers:
+      - name: mysqldb
+        volumeMounts:
+          - mountPath: "/var/lib/mysql"
+            name: mysql-volume
+            subPath: "mysql"
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            value: somewordpress
+          - name: MYSQL_DATABASE
+            value: wordpress
+          - name: MYSQL_USER
+            value: wordpress
+          - name: MYSQL_PASSWORD
+            value: wordpress
+        image: mysql
+        ports:
+        - containerPort: 3306
+          name: mysql
+---
+################################
+###   SERVICE SECTION       ####
+################################
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+  labels:
+    app: mysql
+spec:
+  type: ClusterIP
+  ports:
+    - port: 3306
+  selector:
+    name: mysqldb
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-mysql
+  labels:
+    app: mysql
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+  storageClassName: do-block-storage
